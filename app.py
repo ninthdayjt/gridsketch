@@ -2,19 +2,19 @@ import time
 import math
 import os
 import sys
+import color_adapter as ca
 
-from adapter_one import adapter as adapter1
-
+import adapter_test as adapter1
 
 inputdir = sys.argv[1]
 outputdir = sys.argv[2]
 
+C = ca.COLOR(projList=['test'])
+
 
 def go(fullname, filename):
-
     if '.nc' in filename or '.NC' in filename:
-        adapter1(fullname, filename, outputdir)
-
+        adapter1.adapter(fullname, filename, outputdir, C.get('test'))
 
 start = time.clock()
 
